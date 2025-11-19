@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Win 84 ToDo</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+    <script src="./js/scripts.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <main>
+      <div id="up-bar">
+        <h1 id="title">ToDo Win84</h1>
+        <div id="window-buttons">
+          <button><i class="fa-solid fa-window-minimize"></i></button>
+          <button>
+            <i class="fa-sharp fa-regular fa-window-maximize"></i>
+          </button>
+          <button><i class="fa-solid fa-xmark"></i></button>
+        </div>
+      </div>
+      <form id="todo-form">
+        <div class="form-control">
+          <input type="text" id="todo-input" placeholder="Adicionar nota" />
+          <button type="submit">
+            <i class="fa-solid fa-plus"></i>
+          </button>
+        </div>
+      </form>
+      <form id="edit-form" class="hide">
+        <h2>Editar nota</h2>
+        <div class="form-control">
+          <input type="text" id="edit-input" />
+          <button type="submit">Editar</button>
+          <button id="cancel-edit-btn">Cancelar</button>
+        </div>
+      </form>
+      <div id="toolbar">
+        <div id="search-todo">
+          <input type="text" id="search-input" placeholder="Pesquisar nota" />
+          <button>
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <form id="filter">
+          <select id="filter-input">
+            <option value="all" selected>Todos</option>
+            <option value="done">Feitos</option>
+            <option value="todo">A fazer</option>
+          </select>
+        </form>
+      </div>
+      <div id="todo-list">
+        <div class="todo done">
+          <h3>Nota concluída</h3>
+          <button class="finish-todo">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20px"
+              height="20px"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="000"
+                d="M18 6h2v2h-2zm-2 4V8h2v2zm-2 2v-2h2v2zm-2 2h2v-2h-2zm-2 2h2v-2h-2zm-2 0v2h2v-2zm-2-2h2v2H6zm0 0H4v-2h2z"
+              />
+            </svg>
+          </button>
+          <button class="edit-todo">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20px"
+              height="20px"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="currentColor"
+                d="M18 2h-2v2h-2v2h-2v2h-2v2H8v2H6v2H4v2H2v6h6v-2h2v-2h2v-2h2v-2h2v-2h2v-2h2V8h2V6h-2V4h-2zm0 8h-2v2h-2v2h-2v2h-2v2H8v-2H6v-2h2v-2h2v-2h2V8h2V6h2v2h2zM6 16H4v4h4v-2H6z"
+              />
+            </svg>
+          </button>
+          <button class="delete-todo">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20px"
+              height="20px"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="000"
+                d="M21 5H7v2H5v2H3v2H1v2h2v2h2v2h2v2h16V5zM7 17v-2H5v-2H3v-2h2V9h2V7h14v10zm8-6h-2V9h-2v2h2v2h-2v2h2v-2h2v2h2v-2h-2zm0 0V9h2v2z"
+              />
+            </svg>
+          </button>
+        </div>
+        <div class="todo">
+          <h3>Nota a fazer</h3>
+          <button class="finish-todo">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20px"
+              height="20px"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="000"
+                d="M18 6h2v2h-2zm-2 4V8h2v2zm-2 2v-2h2v2zm-2 2h2v-2h-2zm-2 2h2v-2h-2zm-2 0v2h2v-2zm-2-2h2v2H6zm0 0H4v-2h2z"
+              />
+            </svg>
+          </button>
+          <button class="edit-todo">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20px"
+              height="20px"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="currentColor"
+                d="M18 2h-2v2h-2v2h-2v2h-2v2H8v2H6v2H4v2H2v6h6v-2h2v-2h2v-2h2v-2h2v-2h2v-2h2V8h2V6h-2V4h-2zm0 8h-2v2h-2v2h-2v2h-2v2H8v-2H6v-2h2v-2h2v-2h2V8h2V6h2v2h2zM6 16H4v4h4v-2H6z"
+              />
+            </svg>
+          </button>
+          <button class="delete-todo">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20px"
+              height="20px"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="000"
+                d="M21 5H7v2H5v2H3v2H1v2h2v2h2v2h2v2h16V5zM7 17v-2H5v-2H3v-2h2V9h2V7h14v10zm8-6h-2V9h-2v2h2v2h-2v2h2v-2h2v2h2v-2h-2zm0 0V9h2v2z"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
